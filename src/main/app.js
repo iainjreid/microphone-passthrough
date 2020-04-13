@@ -11,7 +11,7 @@ const { h1, p, button } = require('@emphori/fui-html')
     }
   })
 
-  const audioCtx = new AudioContext()
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
   const gainNode = audioCtx.createGain()
 
   // Create a source from the recieved microphone stream
